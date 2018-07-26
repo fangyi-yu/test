@@ -12,5 +12,7 @@ public interface CompanyService {
 
     Company findByCode(String code);
 
+    Company update(Company company);
+
 
 }

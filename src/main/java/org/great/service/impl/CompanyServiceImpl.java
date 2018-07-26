@@ -40,4 +40,12 @@ public class CompanyServiceImpl  implements CompanyService {
     public Company findByCode(String code) {
         return companyRepository.findByCode(code);
     }
+
+    @Override
+    public Company update(Company company) {
+        if (StringUtils.isBlank(company.getId())) {
+            throw new IllegalArgumentException("id 不能为空");
+        }
+        return companyRepository.save(company);
+    }
 }
