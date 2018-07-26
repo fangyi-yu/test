@@ -27,7 +27,7 @@ public class CompanyServiceImpl  implements CompanyService {
         if (StringUtils.isNotBlank(company.getId())) {
             throw new IllegalArgumentException("id 要为空");
         }
-        company.setCreateTime(new Timestamp(System.currentTimeMillis()));
+//        company.setCreateTime(new Timestamp(System.currentTimeMillis()));
         return companyRepository.save(company);
     }
 

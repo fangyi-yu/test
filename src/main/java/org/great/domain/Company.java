@@ -1,5 +1,6 @@
 package org.great.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,5 +27,6 @@ public class Company {
     @Field(value = "companyName")
     private String name;
 
-    private Timestamp createTime;
+//    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+//    private Timestamp createTime;
 }
