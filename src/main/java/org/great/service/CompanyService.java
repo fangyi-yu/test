@@ -1,8 +1,8 @@
 package org.great.service;
 
+import java.util.List;
 import org.great.domain.Company;
 
-import java.util.List;
 
 public interface CompanyService {
 
