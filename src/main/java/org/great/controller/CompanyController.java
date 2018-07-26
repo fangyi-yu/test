@@ -19,6 +19,11 @@ public class CompanyController {
         return companyService.insert(company);
     }
 
+    @PutMapping
+    public Company update(@RequestBody Company company) {
+        return companyService.update(company);
+    }
+
     @GetMapping
     public List<Company> findAll() {
         return companyService.findAll();
@@ -28,4 +33,6 @@ public class CompanyController {
     public Company findCode(@PathVariable String code) {
         return companyService.findByCode(code);
     }
+
+
 }

@@ -27,7 +27,7 @@ public class CompanyServiceImpl  implements CompanyService {
         if (StringUtils.isNotBlank(company.getId())) {
             throw new IllegalArgumentException("id 要为空");
         }
-        company.setCreateTime(new Timestamp(System.currentTimeMillis()));
+//        company.setCreateTime(new Timestamp(System.currentTimeMillis()));
         return companyRepository.save(company);
     }
 
@@ -39,5 +39,13 @@ public class CompanyServiceImpl  implements CompanyService {
     @Override
     public Company findByCode(String code) {
         return companyRepository.findByCode(code);
+    }
+
+    @Override
+    public Company update(Company company) {
+        if (StringUtils.isBlank(company.getId())) {
+            throw new IllegalArgumentException("id 不能为空");
+        }
+        return companyRepository.save(company);
     }
 }
