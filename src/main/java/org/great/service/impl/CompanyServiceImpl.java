@@ -1,6 +1,7 @@
 package org.great.service.impl;
 
 import com.google.common.collect.Lists;
+import java.util.Date;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.great.domain.Company;
@@ -25,7 +26,7 @@ public class CompanyServiceImpl  implements CompanyService {
         if (StringUtils.isNotBlank(company.getId())) {
             throw new IllegalArgumentException("id 要为空");
         }
-//        company.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        company.setCreateDate(new Date());
         return companyRepository.save(company);
     }
 
